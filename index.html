@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="uz" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Informatika 1–11 | Interaktiv O‘yinlar va Mavzular</title>
+    <meta name="description" content="1-sinfdan 11-sinfgacha informatika fanidan mavzular va har bir sinf uchun 10 tadan interaktiv o‘yinlar, Liquid Glass dizayn hamda tungi va kungi rejim." />
+    <meta property="og:title" content="Informatika 1–11 | Interaktiv O‘yinlar va Mavzular" />
+    <meta property="og:description" content="1-sinfdan 11-sinfgacha informatika fanidan 110 ta interaktiv o‘yin va mavzular." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('info_theme');
+          var root = document.documentElement;
+          if (saved === 'light') {
+            root.classList.remove('dark');
+          } else {
+            root.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

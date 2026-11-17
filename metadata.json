@@ -1,0 +1,6 @@
+{
+  "name": "Informatika 1–11 | Interaktiv O‘yinlar",
+  "description": "1-sinfdan 11-sinfgacha informatika fanidan mavzular va har bir sinf uchun 10 tadan interaktiv o‘yinlar (jami 110 ta o‘yin), Liquid Glass dizayn va tungi/kungi rejim.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

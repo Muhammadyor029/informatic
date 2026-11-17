@@ -1,0 +1,422 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'SG';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: block;
+  src: url('https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JB';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'SG', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  background-color: #eef3fa;
+  color: #0f172a;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.dark body {
+  background-color: #05060a;
+  color: #f8fafc;
+}
+
+.font-mono-jb {
+  font-family: 'JB', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   iOS 26 / 27 OPTICAL LIQUID GLASS (CRYSTAL CLEAR + REFLECTION)
+   ========================================================= */
+.lg-glass {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout style;
+  backdrop-filter: blur(14px) saturate(215%) contrast(1.08) brightness(1.04);
+  -webkit-backdrop-filter: blur(14px) saturate(215%) contrast(1.08) brightness(1.04);
+  background: linear-gradient(
+    148deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.16) 46%,
+    rgba(255, 255, 255, 0.28) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.10),
+    0 2px 10px rgba(15, 23, 42, 0.05),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.96),
+    inset 0 -1.5px 2px rgba(255, 255, 255, 0.52),
+    inset 1.5px 0 1px rgba(255, 255, 255, 0.78),
+    inset -1px 0 1px rgba(200, 27, 28, 0.10);
+  transition: border-color 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.dark .lg-glass {
+  backdrop-filter: blur(14px) saturate(225%) contrast(1.12) brightness(1.06);
+  -webkit-backdrop-filter: blur(14px) saturate(225%) contrast(1.12) brightness(1.06);
+  background: linear-gradient(
+    148deg,
+    rgba(255, 255, 255, 0.085) 0%,
+    rgba(16, 8, 12, 0.16) 48%,
+    rgba(200, 27, 28, 0.085) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.58),
+    0 2px 14px rgba(200, 27, 28, 0.14),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.44),
+    inset 0 -1.5px 2px rgba(255, 255, 255, 0.14),
+    inset 1.5px 0 1px rgba(255, 255, 255, 0.20),
+    inset -1px 0 1px rgba(225, 29, 72, 0.18);
+}
+
+/* Curved liquid meniscus reflection + diagonal glossy sheen + cursor caustic */
+.lg-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      360px circle at var(--mx, 28%) var(--my, 12%),
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.20) 28%,
+      transparent 64%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.54) 0%,
+      rgba(255, 255, 255, 0.14) 9%,
+      transparent 34%,
+      transparent 78%,
+      rgba(255, 255, 255, 0.28) 100%
+    ),
+    linear-gradient(
+      122deg,
+      rgba(255, 255, 255, 0.36) 0%,
+      rgba(255, 255, 255, 0.08) 22%,
+      transparent 44%,
+      transparent 68%,
+      rgba(255, 255, 255, 0.16) 100%
+    );
+}
+
+.dark .lg-glass::before {
+  background:
+    radial-gradient(
+      360px circle at var(--mx, 28%) var(--my, 12%),
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(225, 29, 72, 0.14) 30%,
+      transparent 66%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.05) 9%,
+      transparent 34%,
+      transparent 76%,
+      rgba(220, 38, 38, 0.08) 91%,
+      rgba(255, 255, 255, 0.14) 100%
+    ),
+    linear-gradient(
+      122deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.03) 22%,
+      transparent 44%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.07) 100%
+    );
+}
+
+/* Prismatic Liquid Glass edge dispersion & specular rim (always visible + cursor reactive) */
+.lg-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1.25px;
+  background:
+    radial-gradient(
+      280px circle at var(--mx, 20%) var(--my, 0%),
+      rgba(255, 255, 255, 0.98),
+      rgba(200, 27, 28, 0.26) 45%,
+      transparent 78%
+    ),
+    linear-gradient(
+      138deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.28) 28%,
+      rgba(200, 27, 28, 0.16) 62%,
+      rgba(255, 255, 255, 0.72) 100%
+    );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.dark .lg-glass::after {
+  background:
+    radial-gradient(
+      280px circle at var(--mx, 20%) var(--my, 0%),
+      rgba(255, 255, 255, 0.85),
+      rgba(225, 29, 72, 0.42) 45%,
+      transparent 80%
+    ),
+    linear-gradient(
+      138deg,
+      rgba(255, 255, 255, 0.62) 0%,
+      rgba(255, 255, 255, 0.12) 28%,
+      rgba(200, 27, 28, 0.28) 64%,
+      rgba(255, 255, 255, 0.34) 100%
+    );
+}
+
+.lg-glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dark .lg-glass h1,
+.dark .lg-glass h2,
+.dark .lg-glass h3 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+/* Inner layered Liquid Glass well */
+.lg-well {
+  position: relative;
+  border-radius: 16px;
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.56) 0%,
+    rgba(241, 245, 251, 0.34) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(15, 23, 42, 0.06),
+    0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.dark .lg-well {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.055) 0%,
+    rgba(6, 5, 10, 0.36) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(200, 27, 28, 0.14),
+    0 8px 20px rgba(0, 0, 0, 0.38);
+}
+
+/* =========================================================
+   BACKGROUND RIGHT-SIDE VIDEO ATMOSPHERE
+   ========================================================= */
+.bg-video-primary,
+.bg-video-lift {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-video-primary video,
+.bg-video-lift video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.bg-video-primary {
+  opacity: 0.42;
+  filter: saturate(1.12) contrast(1.06) brightness(1.08);
+  transition: opacity 0.45s ease;
+}
+
+.dark .bg-video-primary {
+  opacity: 0.96;
+  filter: url(#video-grade-night);
+}
+
+.bg-video-lift {
+  display: none;
+  pointer-events: none;
+}
+
+.dark .bg-video-lift {
+  display: block;
+  filter: url(#video-grade-lift);
+  mix-blend-mode: plus-lighter;
+  opacity: 0.36;
+  -webkit-mask-image: linear-gradient(180deg, transparent 21.5%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 21.5%, #000 100%);
+}
+
+.bg-video-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    96deg,
+    rgba(238, 244, 252, 0.90) 0%,
+    rgba(238, 244, 252, 0.64) 44%,
+    rgba(238, 244, 252, 0.24) 76%,
+    rgba(238, 244, 252, 0.10) 100%
+  );
+  transition: background 0.45s ease;
+}
+
+.dark .bg-video-scrim {
+  background: linear-gradient(
+    96deg,
+    rgba(3, 3, 5, 0.80) 0%,
+    rgba(5, 3, 5, 0.46) 44%,
+    rgba(6, 3, 5, 0.14) 76%,
+    transparent 100%
+  );
+}
+
+/* Mobile & low-end device GPU optimizations */
+@media (max-width: 767px) {
+  .lg-glass,
+  .dark .lg-glass {
+    backdrop-filter: blur(9px) saturate(180%) contrast(1.06);
+    -webkit-backdrop-filter: blur(9px) saturate(180%) contrast(1.06);
+    border-radius: 20px;
+  }
+  .lg-well {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .bg-video-primary video {
+    object-position: 78% top;
+  }
+  .dark .bg-video-primary {
+    filter: contrast(1.06) saturate(1.1);
+  }
+  /* Single video decode & zero giant heavy blurred orbs on mobile */
+  .bg-video-lift,
+  .dark .bg-video-lift,
+  .orb-a,
+  .orb-b {
+    display: none !important;
+  }
+  .bg-video-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(238, 244, 252, 0.48) 0%,
+      rgba(238, 244, 252, 0.78) 38%,
+      rgba(238, 244, 252, 0.92) 70%
+    );
+  }
+  .dark .bg-video-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.20) 0%,
+      rgba(4, 3, 5, 0.56) 32%,
+      rgba(4, 3, 5, 0.88) 66%
+    );
+  }
+}
+
+/* Ambient Refraction Caustic Orbs (desktop) */
+@keyframes orbFloatA {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(55px, -35px, 0) scale(1.08); }
+}
+
+@keyframes orbFloatB {
+  0% { transform: translate3d(0, 0, 0) scale(1.03); }
+  100% { transform: translate3d(-60px, 45px, 0) scale(0.96); }
+}
+
+.orb-a {
+  animation: orbFloatA 20s ease-in-out infinite alternate;
+}
+
+.orb-b {
+  animation: orbFloatB 24s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   HARDWARE-ACCELERATED ENTRANCE CHOREOGRAPHY
+   ========================================================= */
+@keyframes lgRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.anim-rise {
+  animation: lgRise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-d1 {
+  animation-delay: 0.06s;
+}
+
+.anim-d2 {
+  animation-delay: 0.13s;
+}
+
+.anim-d3 {
+  animation-delay: 0.20s;
+}
+
+.anim-d4 {
+  animation-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-a, .orb-b, .anim-rise {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
