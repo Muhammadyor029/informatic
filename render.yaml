@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: informatic
+    runtime: static
+    repo: https://github.com/Muhammadyor029/informatic.git
+    branch: main
+    autoDeployTrigger: commit
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 22
