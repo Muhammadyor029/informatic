@@ -1,0 +1,1143 @@
+import type { Lesson } from './types';
+
+export const GRADE_7_P2A: Lesson[] = [
+  {
+    id: 'g7-l17',
+    grade: 7,
+    no: 17,
+    part: '2-yarim yillik',
+    title: 'Elektron jadvalni loyihalash. Dizayn shakllantirish',
+    kind: 'loyiha',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi elektron jadval tuzishdan oldin kirish (Input), hisoblash (Process) va chiqish (Output) kataklarini rejalashtiradi.',
+      'O‘quvchi foydalanuvchi uchun qulay va tushunarli jadval dizaynini loyihalaydi.',
+    ],
+    intro:
+      'Katta hisob-kitob jadvalini tartibsiz kataklarga to‘ldirib tashlasak, bir oydan keyin o‘zimiz ham qaysi son qayerda turganini topa olmaymiz. Keling, avval mukammal jadval maketini loyihalaymiz!',
+    sections: [
+      {
+        heading: 'Jadvalni rejalashtirish: Kirish, Hisob, Natija',
+        body: 'Har bir loyihalangan elektron jadvalda 3 ta mantiqiy zona bo‘ladi: 1) Kirish ma’lumotlari (Input — foydalanuvchi kiritadigan o‘zgarmas sonlar: narx, soliq %, miqdor); 2) Hisob jadvali (Process — formulalar); 3) Yakuniy natija (Output — Jami foyda yoki balans).',
+        example: 'Maktab yarmarkasi jadvalida: Yuqorida "Stend ijarasi: 50 000 so‘m" (Input), o‘rtada mahsulotlar sotuvi jadvali, pastda "Sof foyda" (Output) joylashadi.',
+        tip: 'Kirish kataklari va formula kataklarini turli och ranglar (masalan, kiritish — och sariq, formula — och ko‘k) bilan ajratsangiz, boshqa foydalanuvchi tasodifan formulani o‘chirib yubormaydi!',
+      },
+      {
+        heading: 'Foydalanuvchiga qulay dizayn shakllantirish',
+        body: 'Aniq sarlavha, o‘lchov birliklari ("so‘m", "kg", "%"), mantiqiy ustun tartibi va yetarli katak kengligi jadval dizaynining asosidir.',
+        example: 'Ustun sarlavhasida faqat "Narx" emas, "Narx (so‘m)" deb yozish tushunmovchilikni yo‘qotadi.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Kirish zonasi (Input)', definition: 'Foydalanuvchi tomonidan qo‘lda kiritiladigan boshlang‘ich parametrlar kataklari.' },
+      { term: 'Natija zonasi (Output)', definition: 'Formulalar asosida avtomatik hisoblanadigan yakuniy xulosa kataklari.' },
+      { term: 'Jadval maketi', definition: 'Kataklar, sarlavhalar va formulalar joylashuvining oldindan chizilgan rejasi.' },
+      { term: 'O‘lchov birligi', definition: 'Sonlar nimani anglatishini ko‘rsatuvchi sarlavha izohi (so‘m, dona, %).'},
+    ],
+    steps: [
+      '1. "Maktab ekologik aksiyasi" (qog‘oz va plastik yig‘ish) loyihasi uchun jadval rejasini tuzing.',
+      '2. Qaysi kataklar Input (1 kg narxi, yig‘ilgan kg), qaysilari Formula ekanini belgilang.',
+      '3. Jadval sarlavhalari va o‘lchov birliklarini aniq yozing.',
+      '4. Kiritish kataklarini och sariq, natija kataklarini och yashil fon bilan ajrating.',
+    ],
+    practice: [
+      {
+        task: 'Oshxona byudjeti uchun Input (kunlik tushum, xarajat) va Output (sof qoldiq) zonalari eskizini tuzing.',
+        expected: 'Kirish va chiqish kataklari mantiqan ajratilgan aniq sxema hosil bo‘ladi.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Sinf kitobxonlik reytingi jadvalining 5 ustunli dizaynini Excelda maket sifatida yarating.',
+        expected: 'Sarlavhalar, birliklar va rangli ajratishlar aniq bajariladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l17-g1',
+        num: '01',
+        title: 'Jadval loyihalash bosqichlari',
+        topic: 'Elektron jadval dizayni',
+        difficulty: 'Oson',
+        engine: 'order',
+        config: {
+          prompt: 'Professional elektron jadval loyihalash bosqichlarini tartiblang.',
+          items: [
+            'Jadval maqsadini va kerakli chiqish (Output) natijasini aniqlash',
+            'Boshlang‘ich kirish (Input) ma’lumotlari va ustunlarini rejalash',
+            'Qog‘ozda yoki ekranda maketni chizish va o‘lchov birliklarini yozish',
+            'Formulalarni yozish va Input/Output kataklarini rang bilan ajratish',
+          ],
+          hint: 'Avval maqsad/natija, keyin kirish ma’lumotlari, maket va oxirida formulalar/rang.',
+          explanation: 'To‘g‘ri ketma-ketlik jadvalni tushunarli va xatosiz saqlaydi.',
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Elektron jadval loyihalashda "Input kataklari" nimani bildiradi?',
+        options: [
+          'Faqat grafiklarni',
+          'Foydalanuvchi qo‘lda kiritadigan boshlang‘ich sonlar va parametrlarni',
+          'O‘chirilgan qatorlarni',
+          'Printer sozlamalarini',
+        ],
+        answer: 1,
+        explanation: 'Input kataklariga boshlang‘ich ma’lumotlar kiritiladi, formulalar esa ularga tayanadi.',
+      },
+      {
+        prompt: 'Ustun sarlavhasida o‘lchov birligini (masalan, "Masofa (km)") ko‘rsatish nima uchun muhim?',
+        options: [
+          'Katak rangini chiroyli qilish uchun',
+          'Sonlar metrda yoki kilometrda ekanida adashmaslik uchun',
+          'Formula o‘chirish uchun',
+          'Faylni kichraytirish uchun',
+        ],
+        answer: 1,
+        explanation: 'Birlik aniq ko‘rsatilmasa, foydalanuvchi qiymat ma’nosini noto‘g‘ri talqin qilishi mumkin.',
+      },
+      {
+        prompt: 'Nima uchun formula turgan kataklar kiritish kataklaridan rang yoki uslub bilan ajratiladi?',
+        options: [
+          'Foydalanuvchi tasodifan formulani o‘chirib ustiga oddiy son yozib qo‘ymasligi uchun',
+          'Monitor elektrini tejash uchun',
+          'Internetga chiqish uchun',
+          'Chop etilmasligi uchun',
+        ],
+        answer: 0,
+        explanation: 'Vizual ajratish foydalanuvchiga qayerga ma’lumot kiritish va qayerga tegmaslikni ko‘rsatadi.',
+      },
+      {
+        prompt: 'Yakuniy jami summa yoki sof foyda hisoblanadigan qism jadvalning qaysi zonasiga kiradi?',
+        options: ['Input', 'Output (Natija)', 'Margin', 'Header'],
+        answer: 1,
+        explanation: 'Hisob-kitob yakunini ko‘rsatuvchi kataklar Output zonasidir.',
+      },
+      {
+        prompt: 'Jadval dizaynida birinchi navbatda nima aniqlanadi?',
+        options: [
+          'Kataklar foni qizilmi yoki ko‘kmi',
+          'Jadval qanday muammoni hal qilishi va qanday natija berishi',
+          'Printerning rangi',
+          'Musiqa fayli',
+        ],
+        answer: 1,
+        explanation: 'Har qanday loyiha maqsad va kutilayotgan natijani aniqlashdan boshlanadi.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Sinf tadbiri xarajatlari misolida tartibsiz va yaxshi loyihalangan jadvalni taqqoslash.',
+      timing: '10 daqiqa nazariya, 25 daqiqa maket loyihalash, 10 daqiqa Order va test.',
+      assessment: 'Input, Process va Output zonalarining aniq ajratilgani.',
+      homework: 'Oila byudjeti yoki sayohat xarajatlari jadvali maketini chizib keling.',
+    },
+  },
+  {
+    id: 'g7-l18',
+    grade: 7,
+    no: 18,
+    part: '2-yarim yillik',
+    title: 'Formulani kiritish. Elektron jadvalni sinovdan o‘tkazish',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi arifmetik amallar ustuvorligini (qavs, ko‘paytirish/bo‘lish, qo‘shish/ayirish) inobatga olib formula tuza oladi.',
+      'O‘quvchi elektron jadvalni 3 xil sinov ma’lumoti (oddiy, chegaraviy va xato/noodatiy ma’lumot) bilan sinovdan o‘tkazishni (Test Plan) bajaradi.',
+    ],
+    intro:
+      'Formula yozib bo‘ldik, lekin u haqiqatan ham to‘g‘ri hisoblayaptimi? Masalan, =2+3*4 natijasi 20 emas 14 chiqadi! Shu sababli har bir jadvalni turli test qiymatlar bilan sinovdan o‘tkazish shart.',
+    sections: [
+      {
+        heading: 'Formulalar va amallar tartibi',
+        body: 'Excel matematikadagi qat’iy tartibga amal qiladi: avval qavs ichi (), keyin daraja (^), so‘ng ko‘paytirish (*) va bo‘lish (/), oxirida qo‘shish (+) va ayirish (-). Shuningdek SUM, AVERAGE, MIN, MAX, COUNT funksiyalari ishlatiladi.',
+        example: '3 ta sonning o‘rtachasini formulada qavssiz "=A1+B1+C1/3" deb yozish XATO! To‘g‘risi: "=(A1+B1+C1)/3" yoki "=AVERAGE(A1:C1)".',
+        tip: 'Formula kataklarida "#DIV/0!" xatosi chiqsa — nolga bo‘lish sodir bo‘lgan, "#NAME?" chiqsa — funksiya nomi xato yozilgan!',
+      },
+      {
+        heading: 'Elektron jadvalni sinovdan o‘tkazish (Testing)',
+        body: 'Test rejasida 3 turdagi qiymatlar kiritib tekshiriladi: 1) Oddiy (Normal) — masalan, 10 va 20; 2) Chegaraviy (Extreme) — masalan, 0 yoki juda katta 1000000; 3) Xato/Noodatiy (Abnormal) — masalan, son o‘rniga manfiy son yoki matn.',
+        example: 'Formula =SUM(A1:A3) ni tekshirish uchun A1=10, A2=20, A3=30 berib kalkulyatordagi 60 bilan solishtiramiz.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Amallar ustuvorligi', definition: 'Formulada qavs, ko‘paytirish/bo‘lish va qo‘shishning bajarilish tartibi.' },
+      { term: 'Test rejasi (Test Plan)', definition: 'Jadval to‘g‘riligini tekshirish uchun kutilgan natija va test qiymatlari jadvali.' },
+      { term: '#DIV/0! xatosi', definition: 'Formulada qiymatni 0 ga yoki bo‘sh katakka bo‘lish natijasidagi xato.' },
+      { term: '#NAME? xatosi', definition: 'Funksiya nomi noto‘g‘ri yozilganda (masalan =SUMA) chiqadigan xato.' },
+    ],
+    steps: [
+      '1. Jadvalga narx, soni, chegirma (%) va yakuniy summa ustunlarini kiriting.',
+      '2. Qavslar bilan to‘g‘ri formula yozing: =(B2*C2)*(1-D2/100).',
+      '3. Normal (narx=10000, son=2, chegirma=10%) qiymat kiritib natijani qo‘lda tekshiring.',
+      '4. Chegaraviy (son=0) va noodatiy qiymatlar kiritib jadval xato chiqarmasligini sinang.',
+    ],
+    practice: [
+      {
+        task: 'Formulada qavs unutilgan "=(A1+B1+C1)/3" va "=A1+B1+C1/3" natijalari farqini ko‘rsating.',
+        expected: 'A1=3, B1=6, C1=9 uchun to‘g‘ri o‘rtacha 6, qavssizda esa 12 chiqib xato beradi.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Jadvalingiz uchun 3 qatorli Test rejasi (Test turi, Kirish qiymat, Kutilgan natija, Haqiqiy natija) tuzing.',
+        expected: 'Normal, chegaraviy va xato testlar muvaffaqiyatli tekshiriladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l18-g1',
+        num: '01',
+        title: 'Qavsli formula laboratoriya',
+        topic: 'Formula aniqligi',
+        difficulty: 'O‘rta',
+        engine: 'sheetlab',
+        config: {
+          prompt: 'A1=4, B1=6, C1=8 berilgan. Uchta sonning o‘rta arifmetigini D1 katakda qavslar yordamida (yoki AVERAGE bilan) hisoblang.',
+          rows: 3,
+          cols: 4,
+          initialCells: { A1: '4', B1: '6', C1: '8' },
+          targetCell: 'D1',
+          expectedValue: 6,
+          requiredFormulaTokens: ['='],
+          hint: '=(A1+B1+C1)/3 yoki =AVERAGE(A1:C1) yozing.',
+          explanation: '(4 + 6 + 8) / 3 = 18 / 3 = 6. Qavssiz yozilsa 4+6+8/3 = 12.67 xato chiqar edi!',
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Excelda =10+4*2 formulasi qanday natija beradi?',
+        options: ['28', '18', '14', '40'],
+        answer: 1,
+        explanation: 'Avval ko‘paytirish 4*2=8 bajariladi, so‘ng 10+8=18 chiqadi.',
+      },
+      {
+        prompt: 'Katakda "#DIV/0!" xatosi paydo bo‘lishining sababi nima?',
+        options: [
+          'Matn juda uzun',
+          'Formulada son nolga (0) yoki bo‘sh katakka bo‘lingan',
+          'Shrift noto‘g‘ri',
+          'Fayl saqlanmagan',
+        ],
+        answer: 1,
+        explanation: 'Matematikada va Excelda nolga bo‘lish mumkin emas (#DIV/0!).',
+      },
+      {
+        prompt: 'Jadvalni sinovdan o‘tkazishda "Chegaraviy (Extreme) test" ga qaysi misol kiradi?',
+        options: [
+          'Odatiy o‘rta son kiritish',
+          'Minimal (0) yoki ruxsat etilgan eng katta qiymatni kiritib tekshirish',
+          'Rangini o‘zgartirish',
+          'Sarlavhani kattalashtirish',
+        ],
+        answer: 1,
+        explanation: 'Chegaraviy testlarda eng kichik (0) va eng katta chegara sonlar tekshiriladi.',
+      },
+      {
+        prompt: 'Katakda "#NAME?" xatosi chiqsa nimani tekshirish kerak?',
+        options: [
+          'Funksiya nomi to‘g‘ri yozilganligini (masalan, =SUM o‘rniga =SUMA emasmi)',
+          'Monitor kabelini',
+          'Sichqonchani',
+          'Qog‘oz o‘lchamini',
+        ],
+        answer: 0,
+        explanation: '#NAME? Excel yozilgan funksiya yoki diapazon nomini tanimaganda chiqadi.',
+      },
+      {
+        prompt: 'A1 va B1 yig‘indisini C1 ga bo‘lish formulasi qaysi?',
+        options: ['=A1+B1/C1', '=(A1+B1)/C1', '=A1+(B1/C1)', 'A1+B1/C1'],
+        answer: 1,
+        explanation: 'Avval yig‘indini olish uchun A1+B1 qavs ichiga olinishi shart.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Ataylab xatoli (=A1+B1+C1/3 va =SUMM) formulalar berilgan jadvalni tuzattirish.',
+      timing: '10 daqiqa xato tahlili, 22 daqiqa sinov jadvali, 13 daqiqa SheetLab va test.',
+      assessment: 'Test rejasi asosida formula aniqligini isbotlay olishi.',
+      homework: '3 ta Excel xato xabari (#DIV/0!, #NAME?, ###) sababini daftarga yozing.',
+    },
+  },
+  {
+    id: 'g7-l19',
+    grade: 7,
+    no: 19,
+    part: '2-yarim yillik',
+    title: 'Modellashtirish',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi elektron jadvalda "Agar shunday bo‘lsa-chi?" (What-if) modellashtirish tushunchasini biladi.',
+      'O‘quvchi bir parametrni (narx, foiz, tezlik) o‘zgartirib, natijaga ta’sirini real vaqtda tahlil qiladi.',
+    ],
+    intro:
+      'Haqiqiy hayotda xato qilish qimmatga tushishi mumkin. Masalan, do‘kon ochishdan oldin kompyuterda model tuzib: "Agar narxni 10% tushirsam, foydam qancha o‘zgaradi?" deb sinab ko‘rish — Modellashtirish deyiladi!',
+    sections: [
+      {
+        heading: 'Kompyuter modeli va "Agar shunday bo‘lsa-chi?" tahlili',
+        body: 'Elektron jadval modeli — real jarayonning (masalan, sayohat xarajati, biznes foydasi, suv sarfi) formulalar orqali yaratilgan nusxasidir. Kirish kataklaridagi bitta sonni o‘zgartirishingiz bilan barcha bog‘langan kataklar va diagrammalar bir onda qayta hisoblanadi.',
+        example: 'Sinf sayohati modelida: Avtobus narxi (o‘zgarmas), 1 kishilik chipta va o‘quvchilar soni beriladi. O‘quvchilar sonini 20 dan 30 ga o‘zgartirsak, har biriga tushadigan xarajat kamaygani darhol ko‘rinadi!',
+        tip: 'Model ishonchli ishlashi uchun formulalarda doimo katak manzilini ishlating — agar formula ichida qo‘lda son qolib ketsa, What-if tahlili noto‘g‘ri ishlaydi.',
+      },
+      {
+        heading: 'Stsenariylarni solishtirish',
+        body: 'Odatda 3 xil stsenariy tekshiriladi: Optimistik (eng yaxshi holat), Realistik (o‘rtacha holat) va Pessimistik (xarajat oshib ketgan holat). Bu to‘g‘ri qaror qabul qilishga yordam beradi.',
+        example: 'Limonad do‘koni modelida: Issiq kunda 50 stakan, salqin kunda 15 stakan sotilsa foyda qancha bo‘lishini hisoblaymiz.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Modellashtirish', definition: 'Real jarayon yoki hodisani formula va parametrlar bilan elektron jadvalda aks ettirish.' },
+      { term: 'What-if tahlili', definition: '"Agar boshlang‘ich qiymat o‘zgarsa nima bo‘ladi?" savoliga javob beruvchi tajriba.' },
+      { term: 'O‘zgaruvchi parametr', definition: 'Model natijasiga ta’sirini kuzatish uchun o‘zgartiriladigan kirish qiymati.' },
+      { term: 'Stsenariy', definition: 'Model parametrlarining ma’lum bir vaziyatdagi to‘plami (yaxshi/o‘rta/yomon).' },
+    ],
+    steps: [
+      '1. "Sinf piknik xarajati" modelini tuzing: Avtobus (300 000 so‘m), 1 kishi taomi (25 000 so‘m), Ishtirokchilar soni (B3).',
+      '2. Umumiy xarajat = B1 + B2*B3 va 1 kishiga to‘lov = Umumiy / B3 formulalarini yozing.',
+      '3. B3 katakka 15, 25 va 40 sonlarini kiritib, har bir bola to‘lovi qanday o‘zgarishini kuzating.',
+    ],
+    practice: [
+      {
+        task: 'Uyga quyosh paneli o‘rnatish modelida oylik tejash 200 000 so‘m bo‘lsa, panel narxi necha oyda qoplanishini hisoblang.',
+        expected: 'Narx / Oylik_tejam formulasi bilan qoplanish muddati olinadi.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Yarmarkada pirojniy narxini 4000, 5000 va 6000 so‘m qilib What-if stsenariylarini solishtiring.',
+        expected: 'Har bir narxda sof foyda qanday o‘zgarishi qayd etiladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l19-g1',
+        num: '01',
+        title: 'What-if biznes modeli',
+        topic: 'Modellashtirish',
+        difficulty: 'O‘rta',
+        engine: 'sheetlab',
+        config: {
+          prompt: 'Maktab yarmarkasi modelida: Stend ijarasi A1=40000, 1 ta kitob foydasi A2=8000, sotilgan kitoblar A3=15. Sof foydani (A2*A3 - A1) A4 katakda hisoblang.',
+          rows: 4,
+          cols: 2,
+          initialCells: { A1: '40000', A2: '8000', A3: '15' },
+          targetCell: 'A4',
+          expectedValue: 80000,
+          requiredFormulaTokens: ['=', 'A2', 'A3', 'A1'],
+          hint: 'Formula: =A2*A3-A1 (15 × 8000 - 40000 = 80000).',
+          explanation: 'Model formulasi =A2*A3-A1 orqali kitob soni (A3) o‘zgarganda sof foyda avtomatik yangilanadi.',
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Elektron jadvalda "What-if" (Agar shunday bo‘lsa-chi?) modellashtirish nimani anglatadi?',
+        options: [
+          'Matn rangini o‘zgartirishni',
+          'Kirish qiymatlarini o‘zgartirib, uning yakuniy natijaga ta’sirini tekshirishni',
+          'Jadvalni o‘chirishni',
+          'Slaydga audio qo‘yishni',
+        ],
+        answer: 1,
+        explanation: 'What-if tahlili parametrlarni o‘zgartirish orqali turli vaziyatlarni oldindan baholaydi.',
+      },
+      {
+        prompt: 'Elektron jadval modeli real hayotda qaror qabul qilishda nega foydali?',
+        options: [
+          'Real pul yo‘qotmasdan turib turli variantlarni xavfsiz sinab ko‘rish mumkin',
+          'Qog‘oz ishlatiladi',
+          'Faqat o‘yin o‘ynaladi',
+          'Parol buziladi',
+        ],
+        answer: 0,
+        explanation: 'Kompyuter modeli xavfsiz va tez tajriba o‘tkazish imkonini beradi.',
+      },
+      {
+        prompt: 'Agar modelda formulalar o‘rniga hisoblangan sonlar qo‘lda yozib qo‘yilgan bo‘lsa nima buziladi?',
+        options: [
+          'What-if tahlili ishlamaydi — kirish soni o‘zgarsa ham natija o‘zgarmaydi',
+          'Ekran o‘chadi',
+          'Shrift kattalashadi',
+          'Hech narsa buzilmaydi',
+        ],
+        answer: 0,
+        explanation: 'Model dinamik bo‘lishi uchun barcha bog‘liq kataklar formula orqali bog‘lanishi shart.',
+      },
+      {
+        prompt: 'Har oy 150 000 so‘mdan jamg‘arilsa, 900 000 so‘mlik velosipedga necha oyda pul yig‘iladi?',
+        options: ['4 oyda', '6 oyda', '8 oyda', '10 oyda'],
+        answer: 1,
+        explanation: '900 000 / 150 000 = 6 oy.',
+      },
+      {
+        prompt: 'Xarajatlar oshib, daromad kamaygan eng noqulay holatni tekshirish qaysi stsenariy?',
+        options: ['Optimistik', 'Pessimistik', 'Tasodifiy', 'Grafik'],
+        answer: 1,
+        explanation: 'Pessimistik stsenariy eng yomon ehtimoliy sharoitdagi natijani ko‘rsatadi.',
+      },
+    ],
+    teacherNotes: {
+      method: '"Maktab yarmarkasi" yoki "Ekskursiya" modeli ustida sinfda jonli What-if tajribalari.',
+      timing: '10 daqiqa tushuntirish, 22 daqiqa model qurish, 13 daqiqa SheetLab va test.',
+      assessment: 'O‘zgaruvchi parametrlar o‘zgarganda natijani to‘g‘ri talqin qilish.',
+      homework: 'Kunlik 20 daqiqa o‘qish bilan 1 oyda (30 kun) necha soat kitob o‘qilishini modellashtiring.',
+    },
+  },
+  {
+    id: 'g7-l20',
+    grade: 7,
+    no: 20,
+    part: '2-yarim yillik',
+    title: 'Ma’lumotlarni toʻplash shaklini tuzish',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi samarali so‘rovnoma va ma’lumot to‘plash shaklini (Data Capture Form) loyihalash qoidalarini biladi.',
+      'O‘quvchi yopiq savollar (ro‘yxat/katakcha) va ochiq savollar farqini hamda jadvalga kiritish qulayligini tushunadi.',
+    ],
+    intro:
+      'Agar so‘rovnomada "Sevimli sport turingiz?" deb bo‘sh joy qoldirsangiz, kimdir "futbool", kimdir "Futbol", yana kimdir "1" deb yozib jadvalni chalkashtiradi. Shuning uchun ma’lumot to‘plash shakli aqlli tuzilishi kerak!',
+    sections: [
+      {
+        heading: 'Ma’lumot to‘plash shakli (Data Capture Form) qoidalari',
+        body: 'Yaxshi shakl aniq sarlavha, qisqa yo‘riqnoma, yetarli javob maydonlari va tushunarli savollarga ega bo‘lishi kerak. Iloji boricha belgilash katakchalari (Checkbox), radio tugmalar yoki tayyor variantlar (Yopiq savollar) qo‘yilsa, keyin ularni Excelda sanash va diagramma chizish oson bo‘ladi.',
+        example: 'Sinfingiz? [ ] 7-A  [ ] 7-B  [ ] 7-V (erkin yozishdan ko‘ra xatosizroq!).',
+        tip: 'Bitta savolda ikkita narsani birdan so‘ramang! Masalan, "Sizga matematika va musiqa yoqadimi?" o‘rniga ikkita alohida savol bering.',
+      },
+      {
+        heading: 'Ma’lumotlarni jadvalga o‘tkazishga tayyorlash',
+        body: 'Qog‘oz yoki elektron shakldagi har bir savol Excel jadvalidagi bitta ustunga, har bir to‘ldirgan odamning javobi esa bitta qatorga mos keladi. Excelda esa Data Validation → List yordamida ochiladigan ro‘yxat qo‘yib xatolarning oldini olish mumkin.',
+        example: 'Shakl ustunlari: Ism | Sinf | Sevimli_fan | Haftalik_soat.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Ma’lumot to‘plash shakli', definition: 'So‘rovnoma yoki anketa orqali tizimli ma’lumot yig‘uvchi blanka/forma.' },
+      { term: 'Yopiq savol', definition: 'Javob variantlari oldindan berilgan savol (Ha/Yo‘q, ro‘yxat).' },
+      { term: 'Ochiq savol', definition: 'Foydalanuvchi o‘z so‘zi bilan erkin javob yozadigan savol.' },
+      { term: 'Data Validation (Ro‘yxat)', definition: 'Excelda katakka faqat belgilangan ro‘yxatdagi qiymatni kiritishga ruxsat berish.' },
+    ],
+    steps: [
+      '1. "O‘quvchilarning bo‘sh vaqt mashg‘ulotlari" mavzusida 5 ta savoldan iborat shakl loyihalang.',
+      '2. Kamida 3 ta savolni yopiq variantli (katakchali) qilib tuzing.',
+      '3. Shaklni Word yoki Excelda toza blanka ko‘rinishida bezang.',
+      '4. Excelda javoblar kiritiladigan ustunlarni tayyorlab Data Validation ro‘yxatini sinang.',
+    ],
+    practice: [
+      {
+        task: 'Sinfdagi kompyuter o‘yinlari yoki kitobxonlik bo‘yicha 4 savolli Data Capture Form tuzing.',
+        expected: 'Yo‘riqnoma, yopiq variantlar va javob katakchalari aniq joylashgan.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Noaniq yozilgan "Yoshingiz va bo‘yingiz nechida?" savolini ikkita aniq maydonga ajratib qayta yozing.',
+        expected: 'Yosh (yil): [___] va Bo‘y (sm): [___] alohida ustunlarga ajratiladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l20-g1',
+        num: '01',
+        title: 'Yaxshi so‘rovnoma qoidalari',
+        topic: 'Ma’lumot to‘plash shakli',
+        difficulty: 'Oson',
+        engine: 'truefalse',
+        config: {
+          prompt: 'Ma’lumot to‘plash shakli tuzish qoidalari to‘g‘ri yoki noto‘g‘riligini aniqlang.',
+          statements: [
+            {
+              text: 'Variantli (yopiq) savollarni Excelda hisoblash va diagramma qilish erkin yozilgan javoblardan ancha oson.',
+              isTrue: true,
+              explanation: 'Bir xil variantlar imlo xatolarini yo‘qotadi va avtomatik sanashni osonlashtiradi.',
+            },
+            {
+              text: 'Bitta savol ichida birdaniga 3 ta boshqa-boshqa narsani so‘rash kerak.',
+              isTrue: false,
+              explanation: 'Har bir maydon faqat bitta aniq ma’lumotni so‘rashi lozim.',
+            },
+            {
+              text: 'Shaklda qisqa ko‘rsatma (masalan, "Faqat bitta javobni belgilang") bo‘lishi foydali.',
+              isTrue: true,
+              explanation: 'Aniq yo‘riqnoma to‘ldiruvchini chalg‘ishdan asraydi.',
+            },
+            {
+              text: 'O‘lchov birligini (masalan, "minut" yoki "soat") ko‘rsatish shart emas.',
+              isTrue: false,
+              explanation: 'Birlik ko‘rsatilmasa kimdir 30 (daqiqa), kimdir 0.5 (soat) deb yozib jadvalni buzadi.',
+            },
+          ],
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'So‘rovnomada imlo xatolarisiz va bir xil formatda ma’lumot yig‘ish uchun qaysi savol turi qulay?',
+        options: ['Yopiq savol (variantlar/katakchalar bilan)', 'Uzun insho', 'Rasm chizish', 'Savolsiz blanka'],
+        answer: 0,
+        explanation: 'Oldindan berilgan variantlar bir xil javoblarni ta’minlaydi va tahlilni tezlashtiradi.',
+      },
+      {
+        prompt: '"Elektron jadvalga o‘tkaziladigan shaklda bir savol" jadvalning qaysi qismiga aylanadi?',
+        options: ['Bitta ustun (maydon) ga', 'Bitta rasmga', 'Fayl nomiga', 'Kolontitulga'],
+        answer: 0,
+        explanation: 'Har bir savol jadvalning alohida ustuniga, har bir kishining anketasi esa bir qatoriga mos keladi.',
+      },
+      {
+        prompt: 'Excelda katakka faqat tayyor ro‘yxatdagi so‘zlarni tanlab kiritish uchun qaysi vosita ishlatiladi?',
+        options: ['Data Validation → List', 'AutoSum', 'Wrap Text', 'Spell Check'],
+        answer: 0,
+        explanation: 'Data Validation → List katak yonida ochiladigan tanlov ro‘yxatini chiqaradi.',
+      },
+      {
+        prompt: '"Haftada necha vaqt kitob o‘qiysiz?" savolida nimani aniq ko‘rsatib qo‘yish kerak?',
+        options: [
+          'Qalam rangini',
+          'Vaqt birligini (daqiqa yoki soat)',
+          'Kitob muqovasini',
+          'Sinf raqamini',
+        ],
+        answer: 1,
+        explanation: 'O‘lchov birligi (masalan, "soat") ko‘rsatilmasa, natijalarni qo‘shib bo‘lmaydi.',
+      },
+      {
+        prompt: 'Qaysi savol shakli noto‘g‘ri tuzilgan?',
+        options: [
+          'Yoshingiz: [ ] 12  [ ] 13  [ ] 14',
+          'Maktab oshxonasi va sport zali sizga yoqadimi? (Ha/Yo‘q)',
+          'Sevimli faningizni tanlang',
+          'Kuniga necha soat uxlaysiz? (soat)',
+        ],
+        answer: 1,
+        explanation: 'Oshxona yoqib, sport zali yoqmasa bitta Ha/Yo‘q bilan javob berib bo‘lmaydi; ularni ajratish kerak.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Sinfdoshlar orasida o‘z tuzgan shaklini sinab ko‘rish (Mini-so‘rovnoma).',
+      timing: '10 daqiqa tushuntirish, 23 daqiqa anketa yaratish, 12 daqiqa True/False va test.',
+      assessment: 'Aniq birliklar, mantiqiy variantlar va tushunarli yo‘riqnoma.',
+      homework: 'Tuzgan anketangiz bo‘yicha 5 ta oila a’zosi yoki do‘stingizdan javoblarni yig‘ib keling.',
+    },
+  },
+  {
+    id: 'g7-l21',
+    grade: 7,
+    no: 21,
+    part: '2-yarim yillik',
+    title: 'Elektron jadvalni formatlash',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi sonli ma’lumotlarga mos formatlarni (Number, Currency, Percentage, Date) qo‘llay oladi.',
+      'O‘quvchi Merge & Center, Wrap Text, katak chegaralari va ranglari yordamida jadvalni o‘qishli qilib bezaydi.',
+    ],
+    intro:
+      '0.15 sonini ko‘rgan odam uning 15% ekanini darrov payqamasligi mumkin; 2500000 ni ko‘rganda esa nollarini sanashga qiynaladi. To‘g‘ri formatlash sonlarni bir qarashda tushunarli qiladi!',
+    sections: [
+      {
+        heading: 'Sonlar formati (Number Formats)',
+        body: 'Home → Number guruhida katakdagi qiymatning ko‘rinishini o‘zgartirish mumkin (qiymatning o‘zi emas, ko‘rinishi!): General (oddiy), Number (minglik ajratgich va o‘nlik kasr: 2 500 000.00), Currency/Accounting (pul birligi: 50 000 so‘m / $), Percentage (0.25 → 25%), Date (15.04.2025).',
+        example: 'Katakda 0.25 yozilgan bo‘lsa, "%" tugmasi bosilganda u 25% ko‘rinishiga kiradi.',
+        tip: 'Pul birligini hech qachon son yoniga klaviaturadan harf bilan ("5000 so‘m") yozmang! Aks holda u matnga aylanib qoladi va =SUM() uni hisoblay olmaydi — buning o‘rniga Number Format dan foydalaning.',
+      },
+      {
+        heading: 'Matnni sig‘dirish va sarlavhani birlashtirish',
+        body: 'Uzun ustun sarlavhasi kesilib qolmasligi uchun "Wrap Text" (bir katak ichida bir necha qatorga bo‘lish) yoqiladi. Jadvalning umumiy bosh sarlavhasini barcha ustunlar ustida markazga olish uchun "Merge & Center" tugmasi qo‘llaniladi.',
+        example: 'A1:E1 kataklarni belgilab Merge & Center bosilsa, 5 ta ustun enida bitta markaziy sarlavha chiqadi.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Number Format', definition: 'Sonlarning valyuta, foiz, sana yoki kasr ko‘rinishida tasvirlanishi.' },
+      { term: 'Percentage (%)', definition: 'O‘nlik ulushni 100 ga ko‘paytirib % belgisi bilan ko‘rsatuvchi format.' },
+      { term: 'Wrap Text (Excel)', definition: 'Uzun matnni katak kengligi ichida keyingi qatorga tushirish.' },
+      { term: 'Merge & Center', definition: 'Belgilangan kataklarni birlashtirib matnni o‘rtaga joylash.' },
+    ],
+    steps: [
+      '1. Do‘kon savdo jadvaliga Mahsulot, Narx, Chegirma (0.1), Sana va Jami ustunlarini kiriting.',
+      '2. 1-qatordagi A1:E1 kataklarni Merge & Center bilan birlashtirib sarlavha yozing.',
+      '3. Narx va Jami ustunlariga Currency (yoki minglik ajratgichli Number), Chegirmaga Percentage (%) format bering.',
+      '4. Uzun sarlavhalar uchun Wrap Text va barcha kataklarga All Borders qo‘llang.',
+    ],
+    practice: [
+      {
+        task: '0.125, 0.5 va 0.08 sonlarini Percentage formatiga o‘tkazing.',
+        expected: '12.5%, 50% va 8% ko‘rinishida chiqadi.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Katakka "25000 so‘m" deb matn yozish bilan 25000 ga Currency format berish o‘rtasidagi farqni formula bilan tekshiring.',
+        expected: 'Matnli katak =SUM da 0 beradi, formatlangan katak esa to‘g‘ri qo‘shiladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l21-g1',
+        num: '01',
+        title: 'Son formatlari va tugmalar',
+        topic: 'Excel formatlash',
+        difficulty: 'Oson',
+        engine: 'match',
+        config: {
+          prompt: 'Formatlash turlarini ularning ekrandagi ko‘rinishi bilan moslashtiring.',
+          pairs: [
+            { left: 'Percentage (Foiz)', right: '0.35 qiymatini 35% qilib ko‘rsatish' },
+            { left: 'Currency (Valyuta)', right: '15000 qiymatini pul birligi belgisi bilan chiqarish' },
+            { left: 'Merge & Center', right: 'Bir nechta katakni birlashtirib sarlavhani markazlash' },
+            { left: 'Wrap Text', right: 'Uzun katak matnini bir necha qatorga tushirib sig‘dirish' },
+            { left: 'Thousands Separator', right: '1000000 ni o‘qish oson 1 000 000 ko‘rinishiga keltirish' },
+          ],
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Katakdagi 0.45 soniga Percentage (%) formati qo‘llansa, ekranda nima ko‘rinadi?',
+        options: ['0.45%', '45%', '4.5%', '450%'],
+        answer: 1,
+        explanation: 'Foiz formati sonni 100 ga ko‘paytirib % belgisini qo‘yadi: 0.45 → 45%.',
+      },
+      {
+        prompt: 'Nima uchun narx katagiga son yonidan klaviaturada "so‘m" so‘zini yozib qo‘yish xato?',
+        options: [
+          'Katak rangi o‘zgaradi',
+          'Excel uni son emas, matn deb tushunadi va formulalar hisoblay olmaydi',
+          'Fayl ochilmaydi',
+          'Printer ishlamaydi',
+        ],
+        answer: 1,
+        explanation: 'Harf qo‘shilgan qiymat matnga aylanadi; birlik esa Number Format orqali qo‘yilishi kerak.',
+      },
+      {
+        prompt: 'Jadvalning eng yuqori umumiy sarlavhasini A1:F1 ustunlari markaziga joylash tugmasi qaysi?',
+        options: ['Wrap Text', 'Merge & Center', 'AutoSum', 'Sort'],
+        answer: 1,
+        explanation: 'Merge & Center kataklarni bitta katakka birlashtirib matnni o‘rtaga oladi.',
+      },
+      {
+        prompt: 'Ustun kengligini oshirmasdan uzun sarlavhani katak ichida ikki qatorga tushirish buyrug‘i qaysi?',
+        options: ['Wrap Text', 'Currency', 'Decimal', 'Borders'],
+        answer: 0,
+        explanation: 'Wrap Text katak balandligini kengaytirib matnni keyingi qatorga o‘tkazadi.',
+      },
+      {
+        prompt: 'Katakda o‘nlik xonalar sonini (.00) kamaytirish uchun qaysi tugma ishlatiladi?',
+        options: ['Decrease Decimal', 'Increase Indent', 'Clear All', 'Freeze Panes'],
+        answer: 0,
+        explanation: 'Decrease Decimal verguldan keyingi raqamlar sonini qisqartiradi.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Matn sifatida kiritilgan "15000 so‘m" ning SUM formulada ishlamasligini sinfda amaliy ko‘rsatish.',
+      timing: '10 daqiqa tushuntirish, 23 daqiqa jadval formatlash, 12 daqiqa Match va test.',
+      assessment: 'Foiz, valyuta va Wrap Text/Merge & Center dan to‘g‘ri foydalanish.',
+      homework: 'O‘z byudjet jadvalingizdagi barcha sonlarni minglik ajratgich va valyuta formatiga keltiring.',
+    },
+  },
+  {
+    id: 'g7-l22',
+    grade: 7,
+    no: 22,
+    part: '2-yarim yillik',
+    title: 'Elektron jadvalni baholash',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi tayyor elektron jadvalni 4 mezon (aniqlik, foydalilik, dizayn/o‘qishlilik, samaradorlik) bo‘yicha tanqidiy baholay oladi.',
+      'O‘quvchi jadvaldagi kamchiliklarni topib, yaxshilash bo‘yicha aniq takliflar bera oladi.',
+    ],
+    intro:
+      'Har bir loyihadan keyin muhim savol tug‘iladi: "Men yaratgan elektron jadval haqiqatan ham foydalanuvchiga qulaymi va xatosiz ishlayaptimi?" Bugun tayyor jadvallarni ekspert kabi baholashni o‘rganamiz!',
+    sections: [
+      {
+        heading: 'Jadvalni baholash mezonlari',
+        body: 'Elektron jadval 4 ta mezon bilan baholanadi: 1) Aniqlik (Accuracy) — formulalar va funksiyalar to‘g‘rimi, ### yoki #DIV/0! yo‘qmi? 2) Samaradorlik (Efficiency) — katak manzillari va SUM/AVERAGE o‘rniga qo‘lda hisoblash ishlatilmaganmi? 3) Dizayn va o‘qishlilik — sarlavhalar, birliklar, chegaralar bormi? 4) Maqsadga muvofiqlik — dastlabki vazifani hal qiladimi?',
+        example: 'Agar =B2+B3+B4+...+B20 o‘rniga =SUM(B2:B20) yozilsa, bu samaradorlikni oshiradi.',
+        tip: 'Jadvalni Ctrl + ~ (Tilda) bosib "Show Formulas" rejimida tekshirsangiz, barcha formulalar yashirinmasdan ekranga chiqadi va xato yozilgan joy darrov ko‘rinadi!',
+      },
+      {
+        heading: 'Kamchiliklarni tuzatish va takomillashtirish',
+        body: 'Baholash faqat xato topish emas, balki yechim taklif qilishdir: masalan, kesilgan matnga Wrap Text berish, birliksiz ustunga "(so‘m)" qo‘shish, tushunarsiz kataklarga izoh yoki rangli ajratish kiritish.',
+        example: 'Baho xulosasi: "Jadval to‘g‘ri hisoblaydi, lekin o‘qishni osonlashtirish uchun minglik ajratgich va umumiy sarlavha qo‘shish kerak."',
+      },
+    ],
+    keyTerms: [
+      { term: 'Baholash (Evaluation)', definition: 'Tayyor mahsulotni aniqlik, qulaylik va dizayn mezonlari bo‘yicha tahlil qilish.' },
+      { term: 'Show Formulas (Ctrl + `)', definition: 'Kataklardagi natijalar o‘rniga formulalarning o‘zini ko‘rsatish rejimi.' },
+      { term: 'Samaradorlik', definition: 'Qisqa funksiyalar va dinamik katak manzillari yordamida eng optimal yechim tuzish.' },
+      { term: 'Takomillashtirish', definition: 'Topilgan kamchiliklar asosida jadvalni yaxshilash jarayoni.' },
+    ],
+    steps: [
+      '1. O‘qituvchi bergan namunaviy (ataylab kamchiliklari bor) jadvalni oching.',
+      '2. Show Formulas rejimini yoqib, formula o‘rniga oddiy son yozilgan kataklarni toping.',
+      '3. Dizayn bo‘yicha kamchiliklarni (kesilgan sarlavha, yo‘q chegara, birlik yo‘qligi) ro‘yxatga oling.',
+      '4. Jadvalni yaxshilang va 3 bandli baholash xulosasini yozing.',
+    ],
+    practice: [
+      {
+        task: 'Sinfdoshingiz yaratgan jadvalni 4 ta mezon asosida tekshirib 2 ta ijobiy jihat va 2 ta taklif yozing.',
+        expected: 'Konstruktiv va aniq tahliliy fikrlar bildiriladi.',
+        difficulty: 'oson',
+      },
+      {
+        task: '"Show Formulas" rejimida 5 qatorli hisobotdagi bitta "qo‘lda yozilgan soxta natija" katagini toping.',
+        expected: 'Formula o‘rniga oddiy son kiritilgan katak aniqlanib, formula bilan almashtiriladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l22-g1',
+        num: '01',
+        title: 'Jadval eksperti: Kamchilikni top',
+        topic: 'Jadvalni baholash',
+        difficulty: 'O‘rta',
+        engine: 'casestudy',
+        config: {
+          prompt: 'Qaysi baholash xulosasi va taklifi eng professional?',
+          scenario: 'Siz tekshirayotgan "Oylik xarajatlar" jadvalida barcha raqamlar 1250000 kabi bo‘shliqsiz yozilgan, "Jami" katagida esa "=SUM(B2:B8)" o‘rniga qo‘lda hisoblangan "350000" soni turibdi. Qanday baho berasiz?',
+          options: [
+            {
+              text: 'Hammasi a’lo, hech narsani o‘zgartirish shart emas',
+              isCorrect: false,
+              feedback: 'Xato! Jami katagida formula bo‘lmasa, xarajat o‘zgarganda summa yangilanmaydi.',
+            },
+            {
+              text: 'Jami katagiga =SUM(B2:B8) formulasini qo‘yish va sonlarga minglik ajratgichli Number formatini berish kerak',
+              isCorrect: true,
+              feedback: 'Ajoyib ekspert xulosasi! Bu ham aniqlikni (samaradorlik), ham o‘qishlilikni (dizayn) ta’minlaydi.',
+            },
+            {
+              text: 'Jadvalni butunlay o‘chirib Wordda matn qilib yozish kerak',
+              isCorrect: false,
+              feedback: 'Hisob-kitob uchun Word emas, elektron jadval eng qulay vositadir.',
+            },
+          ],
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Elektron jadvaldagi barcha formulalarni natija o‘rnida ekranga chiqarib tekshirish rejimi qaysi?',
+        options: ['Show Formulas', 'Wrap Text', 'Merge & Center', 'Print'],
+        answer: 0,
+        explanation: 'Show Formulas (Formulas → Show Formulas) barcha kataklardagi asl formulalarni ko‘rsatadi.',
+      },
+      {
+        prompt: 'Jadvalni "Samaradorlik" mezoni bo‘yicha baholashda nimaga e’tibor beriladi?',
+        options: [
+          'Sarlavha qizilmi yo ko‘kmi',
+          'Qo‘lda kiritish o‘rniga =SUM, =AVERAGE kabi dinamik funksiyalardan oqilona foydalanilganligiga',
+          'Kataklar soni ko‘pligiga',
+          'Fayl nomi uzunligiga',
+        ],
+        answer: 1,
+        explanation: 'Dinamik funksiyalar va to‘g‘ri murojaatlar jadvalni samarali va xatosiz qiladi.',
+      },
+      {
+        prompt: 'Jadvaldagi matn katak chegarasidan kesilib ko‘rinmay qolsa, qaysi baholash mezoni pasayadi?',
+        options: ['O‘qishlilik va dizayn', 'Xavfsizlik', 'Audio sifati', 'Tarmoq tezligi'],
+        answer: 0,
+        explanation: 'Kesilgan matn foydalanuvchi uchun jadvalni o‘qishni qiyinlashtiradi.',
+      },
+      {
+        prompt: 'Yaxshi baholash (Peer Review) qanday bo‘lishi kerak?',
+        options: [
+          'Faqat "yomon" deb yozib qo‘yish',
+          'Kuchli tomonlarni ko‘rsatib, kamchilikni tuzatish uchun aniq taklif berish',
+          'Do‘stingiznikiga tekshirmay 5 qo‘yish',
+          'Formulalarni o‘chirib tashlash',
+        ],
+        answer: 1,
+        explanation: 'Konstruktiv baholash aniq dalil va yaxshilash bo‘yicha taklif beradi.',
+      },
+      {
+        prompt: 'Agar jadvalda 20 ta katakni qo‘shish uchun "=A1+A2+...+A20" yozilgan bo‘lsa, uni qanday yaxshilash mumkin?',
+        options: ['=SUM(A1:A20) bilan almashtirish', '=A1*20 yozish', 'Kataklarni o‘chirish', 'O‘zgartirib bo‘lmaydi'],
+        answer: 0,
+        explanation: '=SUM(A1:A20) ancha qisqa, tushunarli va xatosizdir.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Juftliklarda o‘zaro jadval tekshirish (Peer Assessment) rubrikasidan foydalanish.',
+      timing: '8 daqiqa mezonlar, 22 daqiqa Show Formulas va tekshiruv, 15 daqiqa CaseStudy va test.',
+      assessment: 'Kamchilikni topish va aniq takomillashtirish taklifini yozish.',
+      homework: 'Avval tuzgan biror jadvalingizni Show Formulas orqali tekshirib, 2 ta yaxshilanish kiriting.',
+    },
+  },
+  {
+    id: 'g7-l23',
+    grade: 7,
+    no: 23,
+    part: '2-yarim yillik',
+    title: 'Elektron jadval natijalarini diagramma sifatida taqdim etish',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi 7-sinf darajasida kompleks jadvallardan (bir nechta qator/ustunli) diagramma qurish va mos turni tanlashni biladi.',
+      'O‘quvchi diagrammada ma’lumot yorliqlari (Data Labels), o‘q nomlari va diapazonni tahrirlashni bajaradi.',
+    ],
+    intro:
+      '6-sinfda oddiy grafik chizgan edik. Endi esa ikki xil ko‘rsatkichni (masalan, Daromad va Xarajatni) bitta grafikda solishtirish va ustunlar ustiga aniq sonlarni (Data Labels) chiqarishni o‘rganamiz!',
+    sections: [
+      {
+        heading: 'Bir nechta qatorli taqqoslash diagrammalari',
+        body: 'Agar jadvalda 3 ta ustun bo‘lsa (Oy | Daromad | Xarajat), hammasini belgilab Ustunli (Clustered Column) diagramma tuzsak, har bir oy uchun yonma-yon ikkita rangli ustun chiqadi. Qo‘shni bo‘lmagan ustunlarni belgilash uchun Ctrl tugmasini bosib turib belgilang!',
+        example: 'A ustun (Ismlar) va D ustun (Umumiy ball) ni o‘rtadagi ustunlarsiz belgilash uchun Ctrl + sichqoncha ishlatiladi.',
+        tip: 'Doiraviy diagramma (Pie chart) faqat BITTA sonlar qatori uchun ishlaydi! Agar ikkita qatorni taqqoslamoqchi bo‘lsangiz, albatta Ustunli yoki Chiziqli diagramma tanlang.',
+      },
+      {
+        heading: 'Data Labels va diagramma dizayni',
+        body: 'Diagramma yonidagi "+" (Chart Elements) tugmasidan "Axis Titles" (o‘q sarlavhalari), "Data Labels" (ustunlar tepasida aniq sonlarni ko‘rsatish) va "Legend" joylashuvini yoqish mumkin.',
+        example: 'Doiraviy diagrammada Data Labels ni foiz (%) ko‘rinishiga sozlash o‘qishni juda osonlashtiradi.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Clustered Column', definition: 'Bir nechta seriyani yonma-yon ustunlarda taqqoslovchi diagramma.' },
+      { term: 'Data Labels', definition: 'Ustun, nuqta yoki bo‘laklarning yonida aniq son qiymatini ko‘rsatuvchi yozuv.' },
+      { term: 'Ctrl bilan belgilash', definition: 'Jadvaldagi yonma-yon bo‘lmagan ustunlarni tanlab diagramma qurish usuli.' },
+      { term: 'Axis Titles', definition: 'Gorizontal (X) va vertikal (Y) o‘qlarning birlik va nom yozuvlari.' },
+    ],
+    steps: [
+      '1. Oylar bo‘yicha "Tushum" va "Xarajat" jadvalini kiriting (4 oy).',
+      '2. Barcha jadvalni belgilab Insert → Clustered Column diagramma tuzing.',
+      '3. "+" (Chart Elements) dan Axis Titles va Data Labels ni yoqing.',
+      '4. Endi faqat Oy va Tushum ustunlarini belgilab, yangi varaqqa Pie diagramma chizing.',
+    ],
+    practice: [
+      {
+        task: 'Sinfdagi 1- va 2-chorak o‘rtacha ballarini fanlar bo‘yicha yonma-yon ustunli diagrammada taqqoslang.',
+        expected: 'Har bir fan ostida 2 ta rangli ustun va Data Labels sonlari ko‘rinadi.',
+        difficulty: 'o‘rta',
+      },
+      {
+        task: 'Ctrl tugmasi bilan A1:A6 va D1:D6 (oradagi B va C siz) ustunlaridan diagramma yarating.',
+        expected: 'Ortiqcha ustunlarsiz faqat kerakli ikkita ustun grafikda aks etadi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l23-g1',
+        num: '01',
+        title: 'Grafik o‘qlari va seriyalar',
+        topic: 'Natijalarni diagrammada berish',
+        difficulty: 'O‘rta',
+        engine: 'chartlab',
+        config: {
+          prompt: 'Elektron jadvaldagi 4 ta bo‘limning yillik daromadi (mln so‘m) natijalarini taqqoslash uchun mos grafik tuzing.',
+          datasetTitle: 'Bo‘limlar bo‘yicha daromad (mln so‘m)',
+          data: [
+            { label: '1-chorak', value: 45 },
+            { label: '2-chorak', value: 62 },
+            { label: '3-chorak', value: 58 },
+            { label: '4-chorak', value: 79 },
+          ],
+          correctType: 'bar',
+          xAxisOptions: ['Choraklar', 'Xodimlar ismi', 'Sana'],
+          correctXAxis: 'Choraklar',
+          yAxisOptions: ['Daromad (mln so‘m)', 'Telefon raqami', 'Ustun eni'],
+          correctYAxis: 'Daromad (mln so‘m)',
+          titleOptions: ['Yillik choraklar bo‘yicha daromad taqqoslovi', 'Maktab dars jadvali', 'Ob-havo'],
+          correctTitle: 'Yillik choraklar bo‘yicha daromad taqqoslovi',
+          explanation: 'Choraklar bo‘yicha ko‘rsatkichlarni solishtirishda Ustunli (Bar/Column) diagramma va birlik ko‘rsatilgan Y o‘qi eng aniq ko‘rinish beradi.',
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Jadvaldagi bir-biridan uzoqda joylashgan (masalan, A va D) ustunlardan diagramma tuzish uchun qaysi tugma bosib turiladi?',
+        options: ['Ctrl', 'Shift', 'Alt', 'Space'],
+        answer: 0,
+        explanation: 'Ctrl tugmasini bosib turib qo‘shni bo‘lmagan bir nechta ustun diapazonini belgilash mumkin.',
+      },
+      {
+        prompt: 'Diagramma ustunlari tepasida aniq sonlarni ko‘rsatuvchi element qaysi?',
+        options: ['Gridlines', 'Data Labels', 'Page Borders', 'Header'],
+        answer: 1,
+        explanation: 'Data Labels har bir ustun yoki bo‘lakning aniq son qiymatini chiqaradi.',
+      },
+      {
+        prompt: 'Ikkita ko‘rsatkichni (Daromad va Xarajat) 6 oy davomida solishtirish uchun qaysi diagramma turi MOS EMAS?',
+        options: ['Ustunli (Clustered Column)', 'Chiziqli (Line)', 'Doiraviy (Pie chart)', 'Gorizontal ustunli'],
+        answer: 2,
+        explanation: 'Pie chart faqat bitta qator ma’lumotning ulushlarini ko‘rsatadi, ikki seriyani solishtira olmaydi.',
+      },
+      {
+        prompt: 'Diagrammaning Y o‘qi nomida nimani ko‘rsatish o‘quvchiga katta yordam beradi?',
+        options: ['O‘lchov birligini (masalan, "ming so‘m" yoki "dona")', 'Fayl hajmini', 'Muallif yoshini', 'Hech narsani'],
+        answer: 0,
+        explanation: 'O‘q sarlavhasidagi birlik grafikdagi sonlar masshtabini tushuntiradi.',
+      },
+      {
+        prompt: 'Jadvaldagi sonni o‘zgartirsak, unga bog‘langan Excel diagrammasi nima bo‘ladi?',
+        options: [
+          'O‘chib ketadi',
+          'Yangi qiymatga mos ravishda avtomatik qayta chiziladi',
+          'Eski holicha qoladi',
+          'Rangini yo‘qotadi',
+        ],
+        answer: 1,
+        explanation: 'Diagramma jadval kataklariga jonli bog‘langan bo‘lib, son o‘zgarishi bilan yangilanadi.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Ctrl yordamida jadvalning faqat 1- va oxirgi ustunidan grafik chiqarishni jonli ko‘rsatish.',
+      timing: '10 daqiqa nazariya, 23 daqiqa amaliy diagramma, 12 daqiqa ChartLab va test.',
+      assessment: 'O‘q sarlavhalari, Data Labels va mos diagramma turi tanlangani.',
+      homework: 'O‘z maktabingizda 2 ta fan bo‘yicha 3 chorak natijalaridan taqqoslash diagrammasi tuzing.',
+    },
+  },
+  {
+    id: 'g7-l24',
+    grade: 7,
+    no: 24,
+    part: '2-yarim yillik',
+    title: 'Shartli formatlash va maqsadni qidirish vositalaridan foydalanish',
+    kind: 'dars',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi Shartli formatlash (Conditional Formatting) orqali ma’lum shartga mos kataklarni avtomatik ranglashni biladi.',
+      'O‘quvchi "Maqsadni qidirish" (Goal Seek) vositasi yordamida kerakli natija olish uchun boshlang‘ich parametr qancha bo‘lishi kerakligini topadi.',
+    ],
+    intro:
+      'Sinf jurnalida 30 ta o‘quvchi ichidan 60 balldan past olganlarni darhol qizil rangda ajratib ko‘rsatish yoki "90 ball yig‘ish uchun oxirgi imtihonda nechchi olishim kerak?" savoliga bir soniyada javob topishni xohlaysizmi?',
+    sections: [
+      {
+        heading: 'Shartli formatlash (Conditional Formatting)',
+        body: 'Home → Conditional Formatting katak qiymatiga qarab rangni avtomatik o‘zgartiradi. Masalan: "Highlight Cells Rules → Greater Than / Less Than" (85 dan katta bo‘lsa yashil, 55 dan kichik bo‘lsa qizil) yoki "Data Bars" (katak ichida kichik ustuncha chizish). Qiymat o‘zgarsa, rang ham o‘zi o‘zgaradi!',
+        example: 'Ombordagi tovar soni < 5 bo‘lsa katak avtomatik qizil yonib ogohlantiradi.',
+        tip: 'Barcha kataklarni bo‘yab qo‘yish emas, faqat e’tibor talab qiluvchi chegara qiymatlarni Shartli formatlash bilan ajratish ma’qul.',
+      },
+      {
+        heading: 'Maqsadni qidirish (Goal Seek)',
+        body: 'Goal Seek (Data → What-If Analysis → Goal Seek) — "teskari hisoblash" vositasidir! Biz oxirgi natija (Set cell → To value) qancha bo‘lishini xohlashimizni va buning uchun qaysi kirish katagini (By changing cell) o‘zgartirish kerakligini aytamiz. Excel kerakli sonni o‘zi topib beradi!',
+        example: '3 ta chorak bahosi 4, 4, 5. O‘rtacha =AVERAGE(B1:B4) ning 4.5 chiqishi uchun B4 (4-chorak) nechchi bo‘lishi kerak? Goal Seek B4 = 5 topib beradi!',
+      },
+    ],
+    keyTerms: [
+      { term: 'Conditional Formatting', definition: 'Katak qiymati berilgan shartni bajarganda uni avtomatik rang yoki belgi bilan ajratish.' },
+      { term: 'Data Bars / Color Scales', definition: 'Sonlar kattaligiga mos ravishda katak ichida rangli shkalalar chizish.' },
+      { term: 'Goal Seek (Maqsadni qidirish)', definition: 'Istalgan formula natijasiga erishish uchun kirish katagi qiymatini avtomatik topuvchi vosita.' },
+      { term: 'By changing cell', definition: 'Goal Seek oynasida maqsadga yetish uchun o‘zgartiriladigan parametr katagi.' },
+    ],
+    steps: [
+      '1. 6 ta o‘quvchining test ballarini kiriting (45, 78, 92, 54, 88, 61).',
+      '2. Ballar diapazonini belgilab Home → Conditional Formatting → Less Than 60 → Qizil rang qo‘ying.',
+      '3. Xuddi shu diapazonga Greater Than 85 → Yashil rang bering.',
+      '4. 3 ta imtihon balli (70, 80, ?) bo‘yicha o‘rtacha 85 chiqishi uchun Data → What-If Analysis → Goal Seek ni ishga tushiring.',
+    ],
+    practice: [
+      {
+        task: 'Sinf ballari jadvalida 60 dan pastini qizil, 86+ ni yashil qiluvchi 2 ta shartli format qoidasi tuzing.',
+        expected: 'Ball 58 dan 90 ga o‘zgartirilsa, katak rangi avtomatik qizildan yashilga almashadi.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Goal Seek yordamida: "Narxi 25 000 so‘m bo‘lgan ruchkadan nechta sotsak, jami tushum 500 000 so‘m bo‘ladi?" masalasini yeching.',
+        expected: 'Goal Seek soni katagini 20 ga moslab topadi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l24-g1',
+        num: '01',
+        title: 'Maqsadni qidirish (Goal Seek) hisobi',
+        topic: 'Goal Seek mantiqi',
+        difficulty: 'O‘rta',
+        engine: 'calc',
+        config: {
+          prompt: 'O‘quvchining 3 ta fandan baholari: 70, 80 va 3-fan hali noma’lum. O‘rtacha ball roppa-rosa 80 chiqishi uchun Goal Seek 3-fan katagiga nechchi qiymat topib beradi?',
+          unit: 'ball',
+          correctAnswer: 90,
+          tolerance: 0,
+          steps: [
+            '3 ta fanning o‘rtachasi 80 bo‘lishi uchun jami ball: 80 × 3 = 240 bo‘lishi kerak.',
+            'Hozirgi ma’lum ikki fan yig‘indisi: 70 + 80 = 150.',
+            'Goal Seek 3-katak uchun topadigan qiymat: 240 - 150 = 90.',
+          ],
+          hint: 'O‘rtacha 80 × 3 ta fan = 240 jami kerak. 240 dan (70+80) ni ayiring.',
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Katak qiymati 60 dan past bo‘lganda avtomatik qizil rangga bo‘yalishi qaysi vosita yordamida qilinadi?',
+        options: [
+          'Conditional Formatting (Shartli formatlash)',
+          'Merge & Center',
+          'Wrap Text',
+          'Header',
+        ],
+        answer: 0,
+        explanation: 'Conditional Formatting katak qiymatiga qarab shart asosida format beradi.',
+      },
+      {
+        prompt: 'Goal Seek (Maqsadni qidirish) vositasi nima uchun ishlatiladi?',
+        options: [
+          'Hujjatdan so‘z qidirish uchun',
+          'Belgilangan formula natijasini olish uchun kirish katagi qancha bo‘lishi kerakligini topish uchun',
+          'Diagramma rangini o‘zgartirish uchun',
+          'Internetdan rasm izlash uchun',
+        ],
+        answer: 1,
+        explanation: 'Goal Seek natijadan (Set cell) kelib chiqib kirish parametrini (By changing cell) topadi.',
+      },
+      {
+        prompt: 'Goal Seek ishlashi uchun "Set cell" katagida nima bo‘lishi SHART?',
+        options: ['Matn', 'Formula', 'Rasm', 'Bo‘sh katak'],
+        answer: 1,
+        explanation: 'Goal Seek maqsad katakdagi formula kirish katagiga bog‘liq bo‘lgandagina ishlaydi.',
+      },
+      {
+        prompt: 'Shartli formatlash qo‘llangan katakdagi son o‘zgartirilsa nima sodir bo‘ladi?',
+        options: [
+          'Eski rang o‘zgarmay qolaveradi',
+          'Katak rangi yangi qiymat shartga mos kelishiga qarab darhol o‘zgaradi',
+          'Formula buziladi',
+          'Jadval yopiladi',
+        ],
+        answer: 1,
+        explanation: 'Shartli formatlash dinamik bo‘lib, qiymat yangilanishi bilan ko‘rinishni darhol yangilaydi.',
+      },
+      {
+        prompt: 'Excelda Goal Seek qaysi menyu bo‘limida joylashgan?',
+        options: ['Data → What-If Analysis', 'Insert → Charts', 'View → Zoom', 'Review → Spelling'],
+        answer: 0,
+        explanation: 'Goal Seek ma’lumotlar tahlili — Data → What-If Analysis bo‘limidadir.',
+      },
+    ],
+    teacherNotes: {
+      method: 'O‘quvchilarning choraklik o‘rtacha ballini 5 chiqarish uchun Goal Seek da hisoblab ko‘rish.',
+      timing: '10 daqiqa tushuntirish, 23 daqiqa Shartli formatlash va Goal Seek, 12 daqiqa Calc va test.',
+      assessment: 'Shartli formatlash sharti va Goal Seek kataklarini to‘g‘ri ko‘rsatishi.',
+      homework: 'Goal Seek yordamida: 100 000 so‘m jamg‘arish uchun kuniga necha so‘m tejash kerakligini (20 kunda) hisoblang.',
+    },
+  },
+  {
+    id: 'g7-l25',
+    grade: 7,
+    no: 25,
+    part: '2-yarim yillik',
+    title: 'Nazorat ishi',
+    kind: 'nazorat',
+    hours: 1,
+    tools: ['Excel', 'LibreOffice Calc'],
+    objectives: [
+      'O‘quvchi elektron jadvalni loyihalash, formula va test rejasi, modellashtirish, formatlash, diagramma va Shartli formatlash/Goal Seek bilimlarini tekshiradi.',
+      'O‘quvchi yaxlit elektron jadval muammosini mustaqil hal qiladi.',
+    ],
+    intro:
+      'Elektron jadvallarda modellashtirish va tahlil bo‘limini yakunlayapmiz. Nazorat ishida formulalar aniqligi, formatlash, diagramma va tahlil vositalarini amalda qo‘llaymiz.',
+    sections: [
+      {
+        heading: 'Nazoratda tekshiriladigan amaliy ko‘nikmalar',
+        body: 'Jadval sarlavhasini Merge & Center bilan birlashtirish, birliklarni ko‘rsatish, sonlarga Currency/Percentage format berish, qavsli formula yozish, Conditional Formatting qo‘llash va natijadan mantiqiy diagramma chiqarish asosiy baholash qismidir.',
+        example: 'Soliq qo‘shilgan narx = Narx * (1 + Soliq_foizi).',
+        tip: 'Yakunlashdan oldin "Show Formulas" bilan barcha natija kataklari haqiqiy formula ekanini tekshirib chiqing!',
+      },
+      {
+        heading: 'What-if va Goal Seek nazariyasi',
+        body: 'Parametrlarni o‘zgartirib ta’sirini ko‘rish (modellashtirish) hamda natijaga qarab kirish sonini topish (Goal Seek) tamoyillari testda tekshiriladi.',
+        example: 'Goal Seek dagi Set cell — formula turgan katak, Changing cell — o‘zgaruvchi katak.',
+      },
+    ],
+    keyTerms: [
+      { term: 'Input / Output dizayn', definition: 'Kirish parametrlari va hisoblangan natijalarni ajratib loyihalash.' },
+      { term: 'What-if va Goal Seek', definition: 'Parametrdan natijaga va natijadan parametrga tahlil usullari.' },
+      { term: 'Shartli formatlash', definition: 'Qiymat shartiga ko‘ra avtomatik rang berish.' },
+      { term: 'Data Labels', definition: 'Diagramma ustida sonli qiymatlarni chiqarish.' },
+    ],
+    steps: [
+      '1. "Sinf kutubxonasi xaridi" jadvalini 5 ta kitob nomi, narxi va soni bilan tuzing.',
+      '2. Jami summa formulasini yozing va Currency formatini qo‘llang.',
+      '3. 50 000 so‘mdan qimmat jami xarid kataklarini Conditional Formatting bilan ajrating.',
+      '4. Kitoblar bo‘yicha Ustunli diagramma yaratib Data Labels ni yoqing.',
+    ],
+    practice: [
+      {
+        task: 'Jadvaldagi "Show Formulas" tekshiruvini o‘tkazib, qo‘lda yozilgan qiymat yo‘qligini tasdiqlang.',
+        expected: 'Barcha hisob kataklari "=" bilan boshlanuvchi formulaga ega.',
+        difficulty: 'oson',
+      },
+      {
+        task: 'Umumiy byudjet 300 000 so‘mdan oshmasligi uchun bitta kitob sonini Goal Seek bilan aniqlang.',
+        expected: 'By changing cell orqali aniq kitob soni topiladi.',
+        difficulty: 'o‘rta',
+      },
+    ],
+    games: [
+      {
+        id: 'g7-l25-g1',
+        num: '01',
+        title: 'Excel nazorat saralashi',
+        topic: 'Excel vositalari',
+        difficulty: 'O‘rta',
+        engine: 'sort',
+        config: {
+          prompt: 'Excel vositalarini ularning asosiy vazifa guruhiga ajrating.',
+          buckets: ['Formatlash va Dizayn', 'Tahlil va Formulalar'],
+          items: [
+            { label: 'Merge & Center va Wrap Text', bucket: 'Formatlash va Dizayn' },
+            { label: 'Currency va Percentage son formati', bucket: 'Formatlash va Dizayn' },
+            { label: 'Conditional Formatting (Shartli rang)', bucket: 'Formatlash va Dizayn' },
+            { label: 'Goal Seek (Maqsadni qidirish)', bucket: 'Tahlil va Formulalar' },
+            { label: 'What-if stsenariylarini solishtirish', bucket: 'Tahlil va Formulalar' },
+            { label: '=AVERAGE(B2:B6) va Show Formulas', bucket: 'Tahlil va Formulalar' },
+          ],
+        },
+      },
+    ],
+    quiz: [
+      {
+        prompt: 'Katakdagi 0.18 qiymatiga Percentage formati berilsa qanday ko‘rinadi?',
+        options: ['1.8%', '18%', '0.18%', '180%'],
+        answer: 1,
+        explanation: '0.18 × 100% = 18%.',
+      },
+      {
+        prompt: 'Istalgan maqsad natijaga erishish uchun kirish katagi qiymatini avtomatik topuvchi Excel vositasi qaysi?',
+        options: ['Wrap Text', 'Goal Seek', 'Print Preview', 'AutoSum'],
+        answer: 1,
+        explanation: 'Goal Seek formula natijasiga qarab kirish katagini hisoblab beradi.',
+      },
+      {
+        prompt: 'Har safar son 100 dan oshganda katak avtomatik yashil bo‘lishi uchun nima qo‘llaniladi?',
+        options: ['Conditional Formatting', 'Merge Cells', 'Header', 'Data Labels'],
+        answer: 0,
+        explanation: 'Shartli formatlash (Conditional Formatting) shart asosida rangni o‘zgartiradi.',
+      },
+      {
+        prompt: 'Jadvaldagi ikkita katakda "#DIV/0!" xatosi chiqdi. Buning sababi nima?',
+        options: [
+          'Nolga (0) bo‘lishga urinilgan',
+          'Matn juda kichik',
+          'Fayl nomi xato',
+          'Diagramma tanlanmagan',
+        ],
+        answer: 0,
+        explanation: '#DIV/0! nolga yoki bo‘sh katakka bo‘lish natijasida yuzaga keladi.',
+      },
+      {
+        prompt: 'Bir nechta qatorli ma’lumotlarni (masalan, 3 oy davomida 2 mahsulot sotuvi) solishtirishda qaysi diagramma mos?',
+        options: ['Doiraviy (Pie)', 'Ustunli (Clustered Column)', 'Matn qutisi', 'Jadval chegarasi'],
+        answer: 1,
+        explanation: 'Clustered Column bir nechta seriyani yonma-yon ustunlarda solishtirish imkonini beradi.',
+      },
+    ],
+    teacherNotes: {
+      method: 'Amaliy Excel loyihasi + nazariy test.',
+      timing: '25 daqiqa amaliy jadval, 15 daqiqa Sort/test, 5 daqiqa yakuniy tahlil.',
+      assessment: 'Formula aniqligi, formatlash va Goal Seek/Shartli formatlash ko‘nikmalari.',
+      homework: 'Keyingi darsga "Access — ma’lumotlar bazasi" tushunchasini 6-sinfdan eslab keling.',
+    },
+  },
+];

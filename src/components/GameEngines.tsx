@@ -28,9 +28,28 @@ import type {
   SequenceConfig,
   SortConfig,
 } from '../data/curriculum';
+import type { AnyGameItem } from '../data/plan/types';
+import {
+  CaseStudyGame,
+  CrosswordGame,
+  FillBlankGame,
+  FlashcardsGame,
+  OrderGame,
+  TrueFalseGame,
+} from './engines/TextAndLogicEngines';
+import {
+  CalcGame,
+  ChartLabGame,
+  DbLabGame,
+  HotspotGame,
+  SheetLabGame,
+  TypingGame,
+} from './engines/OfficeAndDataEngines';
+import { BlocksGame, HtmlPlayGame, NetBuilderGame } from './engines/CodeAndNetEngines';
+import { AudioLabGame, ImageLabGame, TimelineGame } from './engines/MediaEngines';
 
 interface EngineProps {
-  game: GameItem;
+  game: AnyGameItem;
   alreadySolved: boolean;
   onWin: (gameId: string, points: number) => void;
   onNextGame: () => void;
@@ -78,7 +97,7 @@ function StatusFooter({
         <button
           type="button"
           onClick={onNextGame}
-          className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#c81b1c] px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#b01617] cursor-pointer"
+          className="lg-btn-primary inline-flex min-h-[44px] items-center gap-2 rounded-xl px-5 py-2.5 text-xs font-semibold text-white cursor-pointer"
         >
           <span>Keyingi o‘yin</span>
           <SkipForward className="h-4 w-4" />
@@ -497,7 +516,7 @@ function MatchGame({
             const active = selLeft === idx;
             return (
               <button
-                key={p.left}
+                key={`${idx}-${p.left}`}
                 type="button"
                 disabled={done}
                 onClick={() => {
@@ -1098,6 +1117,7 @@ function SortGame({
   }
 
   function stepOnce() {
+    setSelected(null);
     if (stepsRef.current.length === 0) {
       if (sorted) {
         stopViz();
@@ -1109,6 +1129,7 @@ function SortGame({
   }
 
   function togglePlay() {
+    setSelected(null);
     if (running) {
       stopViz();
       return;
@@ -1117,7 +1138,6 @@ function SortGame({
     if (sorted) {
       source = config.items.map((x) => ({ ...x }));
       setArr(source);
-      setSelected(null);
       setSwaps(0);
       setComps(0);
       setComparing([]);
@@ -1827,27 +1847,72 @@ function QuizGame({
    UNIFIED GAME ENGINE DISPATCHER
    ========================================================= */
 export function GameEngineHost(props: EngineProps) {
-  const { game } = props;
+  const { game, alreadySolved, onWin, onNextGame, hasNextGame } = props;
+  const legacyGame = game as unknown as GameItem;
+  const baseNewProps = {
+    gameId: game.id,
+    alreadySolved,
+    onWin,
+    onNextGame,
+    hasNextGame,
+  };
+
   switch (game.engine) {
     case 'sequence':
-      return <SequenceGame {...props} config={game.config} />;
+      return <SequenceGame {...props} game={legacyGame} config={game.config} />;
     case 'robot':
-      return <RobotGame {...props} config={game.config} />;
+      return <RobotGame {...props} game={legacyGame} config={game.config} />;
     case 'match':
-      return <MatchGame {...props} config={game.config} />;
+      return <MatchGame {...props} game={legacyGame} config={game.config} />;
     case 'binary':
-      return <BinaryGame {...props} config={game.config} />;
+      return <BinaryGame {...props} game={legacyGame} config={game.config} />;
     case 'logic':
-      return <LogicGame {...props} config={game.config} />;
+      return <LogicGame {...props} game={legacyGame} config={game.config} />;
     case 'sort':
-      return <SortGame {...props} config={game.config} />;
+      return <SortGame {...props} game={legacyGame} config={game.config} />;
     case 'graph':
-      return <GraphGame {...props} config={game.config} />;
+      return <GraphGame {...props} game={legacyGame} config={game.config} />;
     case 'codebug':
-      return <CodeBugGame {...props} config={game.config} />;
+      return <CodeBugGame {...props} game={legacyGame} config={game.config} />;
     case 'cipher':
-      return <CipherGame {...props} config={game.config} />;
+      return <CipherGame {...props} game={legacyGame} config={game.config} />;
     case 'quiz':
-      return <QuizGame {...props} config={game.config} />;
+      return <QuizGame {...props} game={legacyGame} config={game.config} />;
+    case 'order':
+      return <OrderGame {...baseNewProps} config={game.config} />;
+    case 'fillblank':
+      return <FillBlankGame {...baseNewProps} config={game.config} />;
+    case 'truefalse':
+      return <TrueFalseGame {...baseNewProps} config={game.config} />;
+    case 'flashcards':
+      return <FlashcardsGame {...baseNewProps} config={game.config} />;
+    case 'hotspot':
+      return <HotspotGame {...baseNewProps} config={game.config} />;
+    case 'typing':
+      return <TypingGame {...baseNewProps} config={game.config} />;
+    case 'sheetlab':
+      return <SheetLabGame {...baseNewProps} config={game.config} />;
+    case 'chartlab':
+      return <ChartLabGame {...baseNewProps} config={game.config} />;
+    case 'blocks':
+      return <BlocksGame {...baseNewProps} config={game.config} />;
+    case 'htmlplay':
+      return <HtmlPlayGame {...baseNewProps} config={game.config} />;
+    case 'dblab':
+      return <DbLabGame {...baseNewProps} config={game.config} />;
+    case 'netbuilder':
+      return <NetBuilderGame {...baseNewProps} config={game.config} />;
+    case 'calc':
+      return <CalcGame {...baseNewProps} config={game.config} />;
+    case 'imagelab':
+      return <ImageLabGame {...baseNewProps} config={game.config} />;
+    case 'audiolab':
+      return <AudioLabGame {...baseNewProps} config={game.config} />;
+    case 'timeline':
+      return <TimelineGame {...baseNewProps} config={game.config} />;
+    case 'crossword':
+      return <CrosswordGame {...baseNewProps} config={game.config} />;
+    case 'casestudy':
+      return <CaseStudyGame {...baseNewProps} config={game.config} />;
   }
 }
